@@ -160,8 +160,9 @@ for(let i=0; i<=23; i++)
         }
         else kk = k+'';
 
-        if(ii==kk || (ii[0]==kk[1] && ii[1]==kk[0]))
+        if(ii[0]==kk[1] && ii[1]==kk[0]) // ii==kk было лишнее условие
         {
+			//console.log(ii+':'+kk);//выводим часы
             cnt++;
         }
     }
