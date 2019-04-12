@@ -58,6 +58,10 @@ let n = 3;
 document.getElementById('body').appendChild(generateLotteryTable(n));
 
 
+let attemptDiv = document.createElement('div');
+attemptDiv.setAttribute('id', 'attemptDiv');
+attemptDiv.appendChild(document.createTextNode(''));
+document.getElementById('body').appendChild(attemptDiv);
 
 for(let i =0; i<n; i++)
 {
@@ -107,6 +111,11 @@ for(let i =0; i<n; i++)
                 attempts++;
                 document.getElementById('lottery').setAttribute('data-attempts', attempts);
             }
+
+            document.getElementById('attemptDiv').innerHTML = 'Осталось попыток: ' + (3-attempts);
+
         });
     }
 }
+
+document.getElementById('attemptDiv').innerHTML = 'Осталось попыток: 3';
