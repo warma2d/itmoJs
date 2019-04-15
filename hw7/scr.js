@@ -36,34 +36,39 @@ let articles = [
 ];
 
 
-let table = document.createElement('table');
-table.insertRow();
-for(let key in articles[0])
+function createTable(arrObjs)
 {
-    let th = document.createElement('th');
-    th.setAttribute('data-key', key);
-    th.setAttribute('id', key);
-    th.setAttribute('data-direction', 'ASC');
-    let text = document.createTextNode(key);
-    th.appendChild(text);
-    table.firstChild.firstChild.appendChild(th);
+    let table = document.createElement('table');
+    table.insertRow();
+    for(let key in arrObjs[0])
+    {
+        let th = document.createElement('th');
+        th.setAttribute('data-key', key);
+        th.setAttribute('id', key);
+        th.setAttribute('data-direction', 'ASC');
+        let text = document.createTextNode(key);
+        th.appendChild(text);
+        table.firstChild.firstChild.appendChild(th);
+    }
+
+    let cell;
+
+    for(let key in arrObjs)
+    {
+        let row = table.insertRow();
+
+        for(let key2 in arrObjs[key])
+        {
+            cell = row.insertCell();
+            cell.innerHTML = arrObjs[key][key2];
+        }
+    }
+
+    return table;
+
 }
 
-
-for(let key in articles)
-{
-    let row = table.insertRow();
-    let id = row.insertCell();
-    let title = row.insertCell();
-    let descr = row.insertCell();
-    let author = row.insertCell();
-
-    id.innerHTML = articles[key]['id'];
-    title.innerHTML = articles[key]['title'];
-    descr.innerHTML = articles[key]['description'];
-    author.innerHTML = articles[key]['author'];
-}
-
+let table = createTable(articles);
 document.getElementById('body').appendChild(table);
 
 
