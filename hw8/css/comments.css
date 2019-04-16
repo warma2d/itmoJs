@@ -1,0 +1,70 @@
+.avatar
+{
+    width: 100px;
+    position: relative;
+    top:80px;
+}
+
+.commentBlock
+{
+    width: 500px;
+    height: 300px;
+
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+#comments > .commentBlock:nth-child(2n-1)
+{
+    background-color: orange;
+}
+
+#comments > .commentBlock:nth-child(2n)
+{
+    background-color: lightcoral;
+}
+
+.name
+{
+    position: relative;
+    top:60px;
+    left: 15px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.time
+{
+    font-size: 14px;
+    position: relative;
+    top:120px;
+    left: 10px;
+    font-weight: bold;
+}
+
+.comment
+{
+    font-size: 20px;
+    width: 350px;
+    height: 250px;
+    /*background-color: green;*/
+    position: relative;
+    left: 140px;
+    top: -160px;
+}
+
+
+textarea
+{
+    width: 500px;
+    height: 300px;
+}
+
+.error{
+    color:red;
+}
+
+.success
+{
+    color: green;
+}
